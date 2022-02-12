@@ -1,18 +1,5 @@
 defmodule Metrics do
-  @moduledoc """
-  Documentation for `Metrics`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Metrics.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def emit(value) do
+    :telemetry.execute([:metrics, :emit], %{value: value})
   end
 end
