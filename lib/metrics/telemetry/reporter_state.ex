@@ -10,6 +10,10 @@ defmodule Metrics.Telemetry.ReporterState do
   end
 
   def increment do
-    Agent.update(__MODULE__, &(&1 + 1))
+    Agent.update(__MODULE__, fn {count, sum} -> {count + 1, sum} end)
+  end
+
+  def sum(value) do
+    Agent.update(__MODULE__, fn {count, sum} -> {count, sum + value} end)
   end
 end

@@ -32,7 +32,15 @@ defmodule Metrics.Telemetry.CustomReporter do
 
     current_value = ReporterState.value()
 
-    IO.puts("Metric: #{metric.__struct__}. Current value: #{current_value}")
+    IO.puts("Metric: #{metric.__struct__}. Current value: #{inspect(current_value)}")
+  end
+
+  defp handle_metric(%Metrics.Sum{} = metric, %{value: value}, _metadata) do
+    ReporterState.sum(value)
+
+    current_value = ReporterState.value()
+
+    IO.puts("Metric: #{metric.__struct__}. Current value: #{inspect(current_value)}")
   end
 
   defp handle_metric(metric, _measurements, _metadata) do
