@@ -8,7 +8,7 @@ defmodule Metrics.Telemetry do
 
   def init(_arg) do
     children = [
-      {Telemetry.Metrics.ConsoleReporter, metrics: metrics()}
+      {Metrics.Telemetry.CustomReporter, metrics: metrics()}
     ]
 
     Supervisor.init(children, strategy: :one_for_one)
