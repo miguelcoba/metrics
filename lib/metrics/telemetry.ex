@@ -8,6 +8,7 @@ defmodule Metrics.Telemetry do
 
   def init(_arg) do
     children = [
+      {TelemetryMetricsPrometheus, metrics: metrics()},
       {Metrics.Telemetry.CustomReporter, metrics: metrics()}
     ]
 
@@ -16,8 +17,8 @@ defmodule Metrics.Telemetry do
 
   defp metrics do
     [
-      counter("metrics.emit.value"),
-      sum("metrics.emit.value")
+      counter("metrics.emit.value.counter", event_name: [:metrics, :emit], measurement: :value),
+      sum("metrics.emit.value.sum", event_name: [:metrics, :emit], measurement: :value)
     ]
   end
 end
