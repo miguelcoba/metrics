@@ -1,21 +1,5 @@
 # Metrics
 
-**TODO: Add description**
+Source code for the Elixir/Phoenix project from the "Elixir Telemetry" series.
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `metrics` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:metrics, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/metrics>.
-
+Read the [complete series]https://blog.miguelcoba.com/series/elixir-telemetry) in my [blog](https://blog.miguelcoba.com)
