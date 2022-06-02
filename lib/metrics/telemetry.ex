@@ -8,6 +8,7 @@ defmodule Metrics.Telemetry do
 
   def init(_arg) do
     children = [
+      {TelemetryMetricsStatsd, metrics: metrics()},
       {Metrics.Telemetry.CustomReporter, metrics: metrics()}
     ]
 
